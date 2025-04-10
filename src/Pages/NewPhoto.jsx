@@ -34,11 +34,9 @@ function NewPhoto() {
     e.preventDefault();
     console.log(photoData);
     try {
-      const response = await axios.post(
-        "http://localhost:8000/photo/new",
-        photoData,
-        { withCredentials: true }
-      );
+      const response = await axios.post("/photo/new", photoData, {
+        withCredentials: true,
+      });
 
       if (response.data.success) {
         navigate("/");

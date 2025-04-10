@@ -13,7 +13,7 @@ function Navbar() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/loginstatus", {
+        const response = await axios.get("/loginstatus", {
           withCredentials: true,
         });
         console.log(response);
@@ -43,7 +43,7 @@ function Navbar() {
   const handleOnLogot = async (e) => {
     try {
       const rsponse = await axios.post(
-        "http://localhost:8000/logout",
+        "/logout",
         {},
         { withCredentials: true }
       );

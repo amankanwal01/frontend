@@ -22,11 +22,9 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/signup",
-        userInfo,
-        { withCredentials: true }
-      );
+      const response = await axios.post("/signup", userInfo, {
+        withCredentials: true,
+      });
       if (response.data.message) {
         setError(response.data.message);
         setTimeout(() => {

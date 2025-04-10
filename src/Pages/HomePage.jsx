@@ -25,12 +25,9 @@ function HomePage() {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const response = await axios.get(
-          "https://pixellpaht-backend.onrender.com/photos",
-          {
-            withCredentials: true,
-          }
-        );
+        const response = await axios.get("/photos", {
+          withCredentials: true,
+        });
         setAllPhotos(response.data);
       } catch (error) {
         console.log(

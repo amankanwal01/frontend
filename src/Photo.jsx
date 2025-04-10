@@ -9,7 +9,7 @@ function Photo() {
   const { id } = useParams();
   useEffect(() => {
     const fetchPhoto = async () => {
-      const response = await axios.get(`http://localhost:8000/photo/${id}`);
+      const response = await axios.get(`/photo/${id}`);
 
       setPhoto([response.data]);
     };

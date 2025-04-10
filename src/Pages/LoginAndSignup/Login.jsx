@@ -33,11 +33,9 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/login",
-        userInfo,
-        { withCredentials: true }
-      );
+      const response = await axios.post("/login", userInfo, {
+        withCredentials: true,
+      });
 
       if (response.data.success) {
         const username = response.data.user.username;
